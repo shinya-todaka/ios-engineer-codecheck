@@ -9,6 +9,10 @@
 import UIKit
 import APIKit
 
+protocol SearchView: class {
+    func updateTableView()
+}
+
 class SearchViewController: UITableViewController, StoryboardInstantiatable {
 
     @IBOutlet weak var searchBar: UISearchBar! {
