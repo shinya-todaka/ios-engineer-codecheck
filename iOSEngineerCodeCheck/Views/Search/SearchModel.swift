@@ -22,7 +22,7 @@ class SearchModel: SearchModelProtocol {
         self.sessionTask = GitHubAPI.call(request: GitHubAPI.SearchRepositories(query: text)) { [weak self] (result) in
             switch result {
             case let .success(response):
-                self?.delegate?.didChange(items: response.items)
+                self?.delegate?.didChange(repositories: response.repositories)
             case let .failure(error):
                 self?.delegate?.didReceive(error: error)
             }
@@ -31,6 +31,6 @@ class SearchModel: SearchModelProtocol {
 }
 
 protocol SearchModelDelegate: class {
-    func didChange(items: [Item])
+    func didChange(repositories: [Repository])
     func didReceive(error: Error)
 }

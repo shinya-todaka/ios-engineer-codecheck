@@ -10,7 +10,7 @@ import Foundation
 
 protocol SearchPresenter {
     var view: SearchView? { get set }
-    var items: [Item] { get }
+    var repositories: [Repository] { get }
     func searchButtonTapped(with text: String)
     func textDidChange()
 }
@@ -18,7 +18,7 @@ protocol SearchPresenter {
 class SearchViewPresenter: SearchPresenter {
     
     weak var view: SearchView?
-    private(set) var items: [Item] = []
+    private(set) var repositories: [Repository] = []
     private var model: SearchModelProtocol
     
     init(model: SearchModelProtocol) {
@@ -37,8 +37,8 @@ class SearchViewPresenter: SearchPresenter {
 }
 
 extension SearchViewPresenter: SearchModelDelegate {
-    func didChange(items: [Item]) {
-        self.items = items
+    func didChange(repositories: [Repository]) {
+        self.repositories = repositories
         DispatchQueue.main.async {
             self.view?.updateTableView()
         }

@@ -34,19 +34,19 @@ class SearchViewController: UITableViewController, StoryboardInstantiatable, Inj
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter.items.count
+        return presenter.repositories.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Repository", for: indexPath)
-        let repo = presenter.items[indexPath.row]
+        let repo = presenter.repositories[indexPath.row]
         cell.textLabel?.text = repo.fullName
         cell.detailTextLabel?.text = repo.language
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let item = presenter.items[indexPath.item]
+        let item = presenter.repositories[indexPath.item]
         let detailVC = DetailViewController.instantiate(with: item)
         navigationController?.pushViewController(detailVC, animated: true)
     }

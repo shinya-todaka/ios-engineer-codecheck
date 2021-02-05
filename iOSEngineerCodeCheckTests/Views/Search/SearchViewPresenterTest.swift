@@ -32,22 +32,22 @@ class SearchModelStub: SearchModelProtocol {
     var delegate: SearchModelDelegate?
     var sessionTask: SessionTask?
     
-    private var fetchRepositoriesResponse: [String: Result<[Item], Error>] = [:]
+    private var fetchRepositoriesResponse: [String: Result<[Repository], Error>] = [:]
     
-    func addFetchRepositoriesResponse(text: String, result: Result<[Item], Error>) {
+    func addFetchRepositoriesResponse(text: String, result: Result<[Repository], Error>) {
         self.fetchRepositoriesResponse[text] = result
     }
     
     func fetchItems(text: String) {
         guard let response = fetchRepositoriesResponse[text] else {
-            fatalError("fetchUserResponse not found when emailAddress is \(text)")
+            fatalError("fetchItemsResponse not found when text is \(text)")
         }
         
         switch response {
             case let .failure(error):
                 delegate?.didReceive(error: error)
-            case let .success(items):
-                delegate?.didChange(items: items)
+            case let .success(repositories):
+                delegate?.didChange(repositories: repositories)
         }
     }
 }
@@ -59,8 +59,8 @@ extension SearchModelStub {
 }
 
 class SearchViewPresenterTest: XCTestCase {
-    
-    func testFetchItems() {
+  
+    func test_searchButtonがタップされた時viewを更新する関数が呼ばれることを確認() {
         XCTContext.runActivity(named: "SearchButtonタップ") { _ in
             XCTContext.runActivity(named: "tableViewがupdateされること") { _ in
                 let spy = SearchViewPresenterSpy()
@@ -68,7 +68,7 @@ class SearchViewPresenterTest: XCTestCase {
                 let presenter = SearchViewPresenter(model: stub)
                 presenter.view = spy
                 let textToSearch = "swift"
-                let response: Result<[Item], Error> = .success([.init(id: 0, fullName: "swift", language: "japanese", stargazersCount: 9, watchersCount: 4, forksCount: 2, openIssuesCount: 2, owner: Owner(avatarUrl: ""))])
+                let response: Result<[Repository], Error> = .success([.init(id: 0, fullName: "swift", language: "japanese", stargazersCount: 9, watchersCount: 4, forksCount: 2, openIssuesCount: 2, owner: Owner(avatarUrl: ""))])
                 
                 stub.addFetchRepositoriesResponse(text: textToSearch, result: response)
                 let exp = XCTestExpectation(description: "searchButtonTappedが呼ばれた後に実行されるupdateTableViewを待つ")
@@ -88,7 +88,7 @@ class SearchViewPresenterTest: XCTestCase {
                 let presenter = SearchViewPresenter(model: stub)
                 presenter.view = spy
                 let textToSearch = "swift"
-                let response: Result<[Item], Error> = .failure(SearchModelStub.APIErrpr.unknownError)
+                let response: Result<[Repository], Error> = .failure(SearchModelStub.APIErrpr.unknownError)
                 
                 stub.addFetchRepositoriesResponse(text: textToSearch, result: response)
                 let exp = XCTestExpectation(description: "searchButtonTappedが呼ばれた後に実行されるshowAlertを待つ")
@@ -103,20 +103,4 @@ class SearchViewPresenterTest: XCTestCase {
             }
         }
     }
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-    
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }
