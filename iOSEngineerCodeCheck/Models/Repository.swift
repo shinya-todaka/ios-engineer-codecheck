@@ -1,20 +1,14 @@
 //
-//  SearchRepositories.swift
+//  Repository.swift
 //  iOSEngineerCodeCheck
 //
-//  Created by 戸高新也 on 2021/02/01.
+//  Created by 戸高新也 on 2021/02/06.
 //  Copyright © 2021 YUMEMI Inc. All rights reserved.
 //
 
-struct SearchResponse: Decodable {
-    let items: [Item]
-    
-    private enum CodingKeys: String, CodingKey {
-        case items
-    }
-}
+import Foundation
 
-struct Item: Decodable {
+struct Repository: Decodable {
     let id: Int
     let fullName: String
     let language: String?
@@ -34,13 +28,5 @@ struct Item: Decodable {
         case forksCount = "forks_count"
         case openIssuesCount = "open_issues_count"
         case owner = "owner"
-    }
-}
-
-struct Owner: Decodable {
-    let avatarUrl: String
-    
-    private enum CodingKeys: String, CodingKey {
-        case avatarUrl = "avatar_url"
     }
 }

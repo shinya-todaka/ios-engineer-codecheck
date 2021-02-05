@@ -9,7 +9,12 @@
 import UIKit
 import APIKit
 
-class SearchViewController: UITableViewController, StoryboardInstantiatable {
+protocol SearchView: class {
+    func updateTableView()
+    func showAlert(with errorMessage: String)
+}
+
+class SearchViewController: UITableViewController, StoryboardInstantiatable, Injectable {
 
     @IBOutlet weak var searchBar: UISearchBar! {
         didSet {
@@ -17,43 +22,44 @@ class SearchViewController: UITableViewController, StoryboardInstantiatable {
             searchBar.delegate = self
         }
     }
-    
-    private var items: [Item] = []
-    private var sessionTask: SessionTask?
+     
+    var presenter: SearchPresenter!
+    func inject(_ dependency: SearchPresenter) {
+        self.presenter = dependency
+        self.presenter.view = self
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    private func fetchRepositories(text: String) {
-        sessionTask = GitHubAPI.call(request: GitHubAPI.SearchRepositories(query: text)) { [weak self] (result) in
-            switch result {
-                case let .failure(error):
-                    print(error)
-                case let .success(response):
-                    DispatchQueue.main.async {
-                        self?.items = response.items
-                        self?.tableView.reloadData()
-                    }
-            }
-        }
-    }
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return presenter.repositories.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Repository", for: indexPath)
-        let repo = items[indexPath.row]
+        let repo = presenter.repositories[indexPath.row]
         cell.textLabel?.text = repo.fullName
         cell.detailTextLabel?.text = repo.language
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailVC = DetailViewController.instantiate(with: items[indexPath.row])
+        let item = presenter.repositories[indexPath.item]
+        let detailVC = DetailViewController.instantiate(with: item)
         navigationController?.pushViewController(detailVC, animated: true)
+    }
+}
+
+extension SearchViewController: SearchView {
+    func updateTableView() {
+        self.tableView.reloadData()
+    }
+    
+    func showAlert(with errorMessage: String) {
+        //TODO: show alert
+        print(errorMessage)
     }
 }
 
@@ -64,11 +70,11 @@ extension SearchViewController: UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        sessionTask?.cancel()
+        presenter.textDidChange()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let text = searchBar.text, text.count != 0 else { return }
-        fetchRepositories(text: text)
+        guard let text = searchBar.text else { return }
+        presenter.searchButtonTapped(with: text)
     }
 }
