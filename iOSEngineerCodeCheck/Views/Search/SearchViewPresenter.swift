@@ -32,7 +32,7 @@ class SearchViewPresenter: SearchPresenter {
     }
     
     func textDidChange() {
-        model.sessionTask?.cancel()
+        model.cancel()
     }
 }
 

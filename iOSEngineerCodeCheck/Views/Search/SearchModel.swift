@@ -12,6 +12,7 @@ protocol SearchModelProtocol {
     var delegate: SearchModelDelegate? { get set }
     var sessionTask: SessionTask? { get }
     func fetchItems(text: String)
+    func cancel()
 }
 
 class SearchModel: SearchModelProtocol {
@@ -27,6 +28,10 @@ class SearchModel: SearchModelProtocol {
                 self?.delegate?.didReceive(error: error)
             }
         }
+    }
+    
+    func cancel() {
+        sessionTask?.cancel()
     }
 }
 
