@@ -29,20 +29,20 @@ class SearchViewPresenterSpy: SearchView {
 }
 
 class SearchModelStub: SearchModelProtocol {
-    
+    var repositories: [Repository] = []
     
     var delegate: SearchModelDelegate?
     var sessionTask: SessionTask?
     
-    private var fetchRepositoriesResponse: [String: Result<[Repository], Error>] = [:]
+    private var fetchInitialRepositoriesResponse: [String: Result<[Repository], Error>] = [:]
     
-    func addFetchRepositoriesResponse(text: String, result: Result<[Repository], Error>) {
-        self.fetchRepositoriesResponse[text] = result
+    func addFetchInitialRepositoriesResponse(query: String, result: Result<[Repository], Error>) {
+        self.fetchInitialRepositoriesResponse[query] = result
     }
     
-    func fetchItems(text: String) {
-        guard let response = fetchRepositoriesResponse[text] else {
-            fatalError("fetchItemsResponse not found when text is \(text)")
+    func fetchInitialRepositories(query: String) {
+        guard let response = fetchInitialRepositoriesResponse[query] else {
+            fatalError("fetchItemsResponse not found when text is \(query)")
         }
         
         switch response {
@@ -54,6 +54,7 @@ class SearchModelStub: SearchModelProtocol {
     }
     
     func cancel() {}
+    func fetchAdditionalRepositories() {}
 }
 
 extension SearchModelStub {
@@ -75,7 +76,7 @@ class SearchViewPresenterTest: XCTestCase {
                 
                 let response: Result<[Repository], Error> = .success([.init(id: 0, name: "swift", fullName: "swift/apple", language: "c", stargazersCount: 12345, watchersCount: 12345, forksCount: 12345, openIssuesCount: 12345, description: "oss", owner: .init(avatarUrl: "https:/hogehoge", login: "apple"))])
                 
-                stub.addFetchRepositoriesResponse(text: textToSearch, result: response)
+                stub.addFetchInitialRepositoriesResponse(query: textToSearch, result: response)
                 let exp = XCTestExpectation(description: "searchButtonTappedが呼ばれた後に実行されるupdateTableViewを待つ")
                 spy._updateTableView = {
                     exp.fulfill()
@@ -95,7 +96,7 @@ class SearchViewPresenterTest: XCTestCase {
                 let textToSearch = "swift"
                 let response: Result<[Repository], Error> = .failure(SearchModelStub.APIErrpr.unknownError)
                 
-                stub.addFetchRepositoriesResponse(text: textToSearch, result: response)
+                stub.addFetchInitialRepositoriesResponse(query: textToSearch, result: response)
                 let exp = XCTestExpectation(description: "searchButtonTappedが呼ばれた後に実行されるshowAlertを待つ")
                 spy._showAlert = { text in
                     exp.fulfill()
