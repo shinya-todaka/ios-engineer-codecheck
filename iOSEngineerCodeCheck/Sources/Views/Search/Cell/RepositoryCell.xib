@@ -96,7 +96,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="languageColorImageView" destination="i5t-jH-jad" id="2pv-Gd-iB3"/>
+                <outlet property="languageColorView" destination="i5t-jH-jad" id="yu9-7c-Qwl"/>
                 <outlet property="languageLabel" destination="wJt-K2-C9x" id="X42-cp-sS4"/>
                 <outlet property="ownerImageView" destination="suM-tV-HAI" id="iTM-Va-4TB"/>
                 <outlet property="ownerNameLabel" destination="bCh-CS-e2g" id="NOT-hz-kUd"/>

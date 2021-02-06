@@ -29,6 +29,8 @@
 		0B2F336425CE78F1003BA34C /* RepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B2F336225CE78F1003BA34C /* RepositoryCell.xib */; };
 		0B2F336825CE796B003BA34C /* CellReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2F336725CE796B003BA34C /* CellReusable.swift */; };
 		0B2F337825CE9993003BA34C /* UIImageView+SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2F337725CE9993003BA34C /* UIImageView+SFSymbols.swift */; };
+		0B2F33AD25CEEF93003BA34C /* GitHubLanguageColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2F33AC25CEEF93003BA34C /* GitHubLanguageColors.swift */; };
+		0B2F33B125CEF844003BA34C /* GitHubLanguageColors.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B2F33B025CEF844003BA34C /* GitHubLanguageColors.json */; };
 		BF0A658D244F2A3B00280FA6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A658C244F2A3B00280FA6 /* DetailViewController.swift */; };
 		BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945DE244DC5E80012785A /* AppDelegate.swift */; };
 		BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945E0244DC5E80012785A /* SceneDelegate.swift */; };
@@ -91,6 +93,8 @@
 		0B2F336225CE78F1003BA34C /* RepositoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryCell.xib; sourceTree = "<group>"; };
 		0B2F336725CE796B003BA34C /* CellReusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellReusable.swift; sourceTree = "<group>"; };
 		0B2F337725CE9993003BA34C /* UIImageView+SFSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+SFSymbols.swift"; sourceTree = "<group>"; };
+		0B2F33AC25CEEF93003BA34C /* GitHubLanguageColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubLanguageColors.swift; sourceTree = "<group>"; };
+		0B2F33B025CEF844003BA34C /* GitHubLanguageColors.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GitHubLanguageColors.json; sourceTree = "<group>"; };
 		BF0A658C244F2A3B00280FA6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSEngineerCodeCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD945DE244DC5E80012785A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 				0B2F327425CA9879003BA34C /* ClassName.swift */,
 				0B2F327325CA9879003BA34C /* Injectable.swift */,
 				0B2F336725CE796B003BA34C /* CellReusable.swift */,
+				0B2F33AC25CEEF93003BA34C /* GitHubLanguageColors.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 				BFD945E7244DC5EB0012785A /* Assets.xcassets */,
 				BFD945E9244DC5EB0012785A /* LaunchScreen.storyboard */,
 				BFD945EC244DC5EB0012785A /* Info.plist */,
+				0B2F33B025CEF844003BA34C /* GitHubLanguageColors.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -425,6 +431,7 @@
 				BFD945E8244DC5EB0012785A /* Assets.xcassets in Resources */,
 				0B2F324125CA95E5003BA34C /* DetailViewController.storyboard in Resources */,
 				0B2F336425CE78F1003BA34C /* RepositoryCell.xib in Resources */,
+				0B2F33B125CEF844003BA34C /* GitHubLanguageColors.json in Resources */,
 				0B2F323B25CA9592003BA34C /* SearchViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -465,6 +472,7 @@
 				0B2F2F7525C80625003BA34C /* SearchResponse.swift in Sources */,
 				0B2F327725CA9879003BA34C /* ClassName.swift in Sources */,
 				0B2F337825CE9993003BA34C /* UIImageView+SFSymbols.swift in Sources */,
+				0B2F33AD25CEEF93003BA34C /* GitHubLanguageColors.swift in Sources */,
 				0B2F327625CA9879003BA34C /* Injectable.swift in Sources */,
 				0B2F327525CA9879003BA34C /* Instantiatable.swift in Sources */,
 			);

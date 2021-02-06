@@ -29,7 +29,12 @@ class RepositoryCell: ReusableTableCell {
     }
     
     @IBOutlet weak var starCountLabel: UILabel!
-    @IBOutlet weak var languageColorImageView: UIView!
+    @IBOutlet weak var languageColorView: UIView! {
+        didSet {
+            //TODO: change color to language color
+            languageColorView.backgroundColor = .gray
+        }
+    }
     @IBOutlet weak var languageLabel: UILabel!
     
     func configure(repository: Repository) {
