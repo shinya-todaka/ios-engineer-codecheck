@@ -36,8 +36,15 @@ struct Repository: Decodable {
     }
 }
 
+extension Repository: Equatable {
+    static func ==(lhs: Self, rhs: Self) -> Bool {
+        return lhs.id == rhs.id
+    }
+}
+
 extension Repository {
     var languageColor: UIColor? {
         return language.flatMap(Language.init(rawValue:))?.color
     }
 }
+
