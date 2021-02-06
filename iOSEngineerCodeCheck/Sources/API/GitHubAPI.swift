@@ -40,10 +40,16 @@ struct GitHubAPI {
         let path: String = "/search/repositories"
         
         var parameters: Any? {
-            return ["q": query]
+            return [
+                    "q": query,
+                    "page": page,
+                    "per_page": perPage
+                   ]
         }
 
         let query: String
+        let page: Int
+        let perPage: Int = 20
         
         func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
             return try (object as? Response) ??
