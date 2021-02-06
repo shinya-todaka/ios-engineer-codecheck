@@ -29,6 +29,8 @@ class SearchViewPresenterSpy: SearchView {
 }
 
 class SearchModelStub: SearchModelProtocol {
+    
+    
     var delegate: SearchModelDelegate?
     var sessionTask: SessionTask?
     
@@ -50,6 +52,8 @@ class SearchModelStub: SearchModelProtocol {
                 delegate?.didChange(repositories: repositories)
         }
     }
+    
+    func cancel() {}
 }
 
 extension SearchModelStub {
@@ -68,7 +72,8 @@ class SearchViewPresenterTest: XCTestCase {
                 let presenter = SearchViewPresenter(model: stub)
                 presenter.view = spy
                 let textToSearch = "swift"
-                let response: Result<[Repository], Error> = .success([.init(id: 0, fullName: "swift", language: "japanese", stargazersCount: 9, watchersCount: 4, forksCount: 2, openIssuesCount: 2, owner: Owner(avatarUrl: ""))])
+                
+                let response: Result<[Repository], Error> = .success([.init(id: 0, name: "swift", fullName: "swift/apple", language: "c", stargazersCount: 12345, watchersCount: 12345, forksCount: 12345, openIssuesCount: 12345, description: "oss", owner: .init(avatarUrl: "https:/hogehoge", login: "apple"))])
                 
                 stub.addFetchRepositoriesResponse(text: textToSearch, result: response)
                 let exp = XCTestExpectation(description: "searchButtonTappedが呼ばれた後に実行されるupdateTableViewを待つ")

@@ -31,8 +31,7 @@ class RepositoryCell: ReusableTableCell {
     @IBOutlet weak var starCountLabel: UILabel!
     @IBOutlet weak var languageColorView: UIView! {
         didSet {
-            //TODO: change color to language color
-            languageColorView.backgroundColor = .gray
+            languageColorView.layer.cornerRadius = languageColorView.frame.width / 2
         }
     }
     @IBOutlet weak var languageLabel: UILabel!
@@ -44,6 +43,9 @@ class RepositoryCell: ReusableTableCell {
         
         starCountLabel.text = "\(repository.stargazersCount)"
         languageLabel.text = repository.language
+        
+        languageColorView.backgroundColor = repository.languageColor ?? .gray
+        
         guard let ownerURL = URL(string: repository.owner.avatarUrl) else { return }
         Nuke.loadImage(with: ownerURL, into: ownerImageView)
     }

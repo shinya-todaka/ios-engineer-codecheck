@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Repository: Decodable {
     let id: Int
@@ -32,5 +33,11 @@ struct Repository: Decodable {
         case openIssuesCount = "open_issues_count"
         case description
         case owner
+    }
+}
+
+extension Repository {
+    var languageColor: UIColor? {
+        return language.flatMap(Language.init(rawValue:))?.color
     }
 }
