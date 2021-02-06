@@ -18,7 +18,7 @@ struct Repository: Decodable {
     let watchersCount: Int
     let forksCount: Int
     let openIssuesCount: Int
-    let description: String
+    let description: String?
     
     let owner: Owner
     
