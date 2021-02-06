@@ -31,6 +31,14 @@ class SearchViewController: UITableViewController, StoryboardInstantiatable, Inj
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupTableView()
+    }
+    
+    private func setupTableView() {
+        tableView.register(cellType: RepositoryCell.self)
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 98
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,10 +46,9 @@ class SearchViewController: UITableViewController, StoryboardInstantiatable, Inj
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Repository", for: indexPath)
-        let repo = presenter.repositories[indexPath.row]
-        cell.textLabel?.text = repo.fullName
-        cell.detailTextLabel?.text = repo.language
+        let cell = tableView.dequeueReusableCell(with: RepositoryCell.self, for: indexPath)
+        let repository = presenter.repositories[indexPath.item]
+        cell.configure(repository: repository)
         return cell
     }
     

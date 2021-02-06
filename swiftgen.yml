@@ -1,0 +1,6 @@
+json:
+    inputs: iOSEngineerCodeCheck/Resources/GitHubLanguageColors.json
+    outputs:
+      - templateName: inline-swift5
+        output: iOSEngineerCodeCheck/Sources/Generated/GitHubLanguageColors.swift
+

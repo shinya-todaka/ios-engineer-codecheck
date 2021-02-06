@@ -25,6 +25,14 @@
 		0B2F331C25CDC08B003BA34C /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2F331B25CDC08A003BA34C /* Owner.swift */; };
 		0B2F332625CDC4FB003BA34C /* SearchResponseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2F332525CDC4FB003BA34C /* SearchResponseTest.swift */; };
 		0B2F332C25CDE49F003BA34C /* SearchRepositories.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B2F332B25CDE49E003BA34C /* SearchRepositories.json */; };
+		0B2F336325CE78F1003BA34C /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2F336125CE78F1003BA34C /* RepositoryCell.swift */; };
+		0B2F336425CE78F1003BA34C /* RepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B2F336225CE78F1003BA34C /* RepositoryCell.xib */; };
+		0B2F336825CE796B003BA34C /* CellReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2F336725CE796B003BA34C /* CellReusable.swift */; };
+		0B2F337825CE9993003BA34C /* UIImageView+SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2F337725CE9993003BA34C /* UIImageView+SFSymbols.swift */; };
+		0B2F33AD25CEEF93003BA34C /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2F33AC25CEEF93003BA34C /* Language.swift */; };
+		0B2F33B125CEF844003BA34C /* GitHubLanguageColors.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B2F33B025CEF844003BA34C /* GitHubLanguageColors.json */; };
+		0B2F33B625CEF991003BA34C /* GitHubLanguageColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2F33B525CEF991003BA34C /* GitHubLanguageColors.swift */; };
+		0B2F33C225CF0234003BA34C /* UIColor.hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2F33C125CF0234003BA34C /* UIColor.hex.swift */; };
 		BF0A658D244F2A3B00280FA6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A658C244F2A3B00280FA6 /* DetailViewController.swift */; };
 		BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945DE244DC5E80012785A /* AppDelegate.swift */; };
 		BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945E0244DC5E80012785A /* SceneDelegate.swift */; };
@@ -83,6 +91,14 @@
 		0B2F331B25CDC08A003BA34C /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
 		0B2F332525CDC4FB003BA34C /* SearchResponseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponseTest.swift; sourceTree = "<group>"; };
 		0B2F332B25CDE49E003BA34C /* SearchRepositories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SearchRepositories.json; sourceTree = "<group>"; };
+		0B2F336125CE78F1003BA34C /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
+		0B2F336225CE78F1003BA34C /* RepositoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryCell.xib; sourceTree = "<group>"; };
+		0B2F336725CE796B003BA34C /* CellReusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellReusable.swift; sourceTree = "<group>"; };
+		0B2F337725CE9993003BA34C /* UIImageView+SFSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+SFSymbols.swift"; sourceTree = "<group>"; };
+		0B2F33AC25CEEF93003BA34C /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		0B2F33B025CEF844003BA34C /* GitHubLanguageColors.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GitHubLanguageColors.json; sourceTree = "<group>"; };
+		0B2F33B525CEF991003BA34C /* GitHubLanguageColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubLanguageColors.swift; sourceTree = "<group>"; };
+		0B2F33C125CF0234003BA34C /* UIColor.hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.hex.swift; sourceTree = "<group>"; };
 		BF0A658C244F2A3B00280FA6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSEngineerCodeCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD945DE244DC5E80012785A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +144,7 @@
 		0B2F2F6225C8045E003BA34C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0B2F33AC25CEEF93003BA34C /* Language.swift */,
 				0B2F2F7425C80625003BA34C /* SearchResponse.swift */,
 				0B2F331525CDBE1B003BA34C /* Repository.swift */,
 				0B2F331B25CDC08A003BA34C /* Owner.swift */,
@@ -138,6 +155,7 @@
 		0B2F323925CA9553003BA34C /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				0B2F339025CEC044003BA34C /* Cell */,
 				BFD945E2244DC5E80012785A /* SearchViewController.swift */,
 				0B2F323A25CA9592003BA34C /* SearchViewController.storyboard */,
 				0B2F32C325CD542F003BA34C /* SearchViewPresenter.swift */,
@@ -155,14 +173,17 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
-		0B2F327E25CA988E003BA34C /* Shared */ = {
+		0B2F327E25CA988E003BA34C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				0B2F2F6225C8045E003BA34C /* Models */,
+				0B2F336C25CE8DE1003BA34C /* Extensions */,
 				0B2F327225CA9878003BA34C /* Instantiatable.swift */,
 				0B2F327425CA9879003BA34C /* ClassName.swift */,
 				0B2F327325CA9879003BA34C /* Injectable.swift */,
+				0B2F336725CE796B003BA34C /* CellReusable.swift */,
 			);
-			path = Shared;
+			path = Common;
 			sourceTree = "<group>";
 		};
 		0B2F328525CAF77B003BA34C /* Frameworks */ = {
@@ -216,6 +237,56 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		0B2F336C25CE8DE1003BA34C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0B2F337725CE9993003BA34C /* UIImageView+SFSymbols.swift */,
+				0B2F33C125CF0234003BA34C /* UIColor.hex.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0B2F339025CEC044003BA34C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0B2F336125CE78F1003BA34C /* RepositoryCell.swift */,
+				0B2F336225CE78F1003BA34C /* RepositoryCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		0B2F339125CEC0CF003BA34C /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				0B2F33B425CEF95C003BA34C /* Generated */,
+				0B2F32FC25CDB30E003BA34C /* Views */,
+				0B2F329125CAF815003BA34C /* API */,
+				0B2F327E25CA988E003BA34C /* Common */,
+				BFD945DE244DC5E80012785A /* AppDelegate.swift */,
+				BFD945E0244DC5E80012785A /* SceneDelegate.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		0B2F339225CEC1C8003BA34C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BFD945E7244DC5EB0012785A /* Assets.xcassets */,
+				BFD945E9244DC5EB0012785A /* LaunchScreen.storyboard */,
+				BFD945EC244DC5EB0012785A /* Info.plist */,
+				0B2F33B025CEF844003BA34C /* GitHubLanguageColors.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0B2F33B425CEF95C003BA34C /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				0B2F33B525CEF991003BA34C /* GitHubLanguageColors.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 		BFD945D2244DC5E80012785A = {
 			isa = PBXGroup;
 			children = (
@@ -240,15 +311,8 @@
 		BFD945DD244DC5E80012785A /* iOSEngineerCodeCheck */ = {
 			isa = PBXGroup;
 			children = (
-				0B2F2F6225C8045E003BA34C /* Models */,
-				0B2F32FC25CDB30E003BA34C /* Views */,
-				0B2F329125CAF815003BA34C /* API */,
-				0B2F327E25CA988E003BA34C /* Shared */,
-				BFD945DE244DC5E80012785A /* AppDelegate.swift */,
-				BFD945E0244DC5E80012785A /* SceneDelegate.swift */,
-				BFD945E7244DC5EB0012785A /* Assets.xcassets */,
-				BFD945E9244DC5EB0012785A /* LaunchScreen.storyboard */,
-				BFD945EC244DC5EB0012785A /* Info.plist */,
+				0B2F339225CEC1C8003BA34C /* Resources */,
+				0B2F339125CEC0CF003BA34C /* Sources */,
 			);
 			path = iOSEngineerCodeCheck;
 			sourceTree = "<group>";
@@ -380,6 +444,8 @@
 				BFD945EB244DC5EB0012785A /* LaunchScreen.storyboard in Resources */,
 				BFD945E8244DC5EB0012785A /* Assets.xcassets in Resources */,
 				0B2F324125CA95E5003BA34C /* DetailViewController.storyboard in Resources */,
+				0B2F336425CE78F1003BA34C /* RepositoryCell.xib in Resources */,
+				0B2F33B125CEF844003BA34C /* GitHubLanguageColors.json in Resources */,
 				0B2F323B25CA9592003BA34C /* SearchViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -406,17 +472,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B2F33B625CEF991003BA34C /* GitHubLanguageColors.swift in Sources */,
 				BFD945E3244DC5E80012785A /* SearchViewController.swift in Sources */,
+				0B2F336325CE78F1003BA34C /* RepositoryCell.swift in Sources */,
+				0B2F336825CE796B003BA34C /* CellReusable.swift in Sources */,
 				0B2F329325CAF827003BA34C /* GitHubAPI.swift in Sources */,
 				BF0A658D244F2A3B00280FA6 /* DetailViewController.swift in Sources */,
 				0B2F331625CDBE1B003BA34C /* Repository.swift in Sources */,
 				BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */,
 				BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */,
 				0B2F32C425CD5430003BA34C /* SearchViewPresenter.swift in Sources */,
+				0B2F33C225CF0234003BA34C /* UIColor.hex.swift in Sources */,
 				0B2F32D825CD5A47003BA34C /* SearchModel.swift in Sources */,
 				0B2F331C25CDC08B003BA34C /* Owner.swift in Sources */,
 				0B2F2F7525C80625003BA34C /* SearchResponse.swift in Sources */,
 				0B2F327725CA9879003BA34C /* ClassName.swift in Sources */,
+				0B2F337825CE9993003BA34C /* UIImageView+SFSymbols.swift in Sources */,
+				0B2F33AD25CEEF93003BA34C /* Language.swift in Sources */,
 				0B2F327625CA9879003BA34C /* Injectable.swift in Sources */,
 				0B2F327525CA9879003BA34C /* Instantiatable.swift in Sources */,
 			);
@@ -586,7 +658,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = iOSEngineerCodeCheck/Info.plist;
+				INFOPLIST_FILE = iOSEngineerCodeCheck/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -604,7 +676,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = iOSEngineerCodeCheck/Info.plist;
+				INFOPLIST_FILE = iOSEngineerCodeCheck/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -623,7 +695,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S7G9J68NLX;
-				INFOPLIST_FILE = iOSEngineerCodeCheckTests/Info.plist;
+				INFOPLIST_FILE = iOSEngineerCodeCheck/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -645,7 +717,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S7G9J68NLX;
-				INFOPLIST_FILE = iOSEngineerCodeCheckTests/Info.plist;
+				INFOPLIST_FILE = iOSEngineerCodeCheck/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
