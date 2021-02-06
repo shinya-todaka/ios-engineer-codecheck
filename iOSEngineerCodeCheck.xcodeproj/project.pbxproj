@@ -29,8 +29,10 @@
 		0B2F336425CE78F1003BA34C /* RepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B2F336225CE78F1003BA34C /* RepositoryCell.xib */; };
 		0B2F336825CE796B003BA34C /* CellReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2F336725CE796B003BA34C /* CellReusable.swift */; };
 		0B2F337825CE9993003BA34C /* UIImageView+SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2F337725CE9993003BA34C /* UIImageView+SFSymbols.swift */; };
-		0B2F33AD25CEEF93003BA34C /* GitHubLanguageColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2F33AC25CEEF93003BA34C /* GitHubLanguageColors.swift */; };
+		0B2F33AD25CEEF93003BA34C /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2F33AC25CEEF93003BA34C /* Language.swift */; };
 		0B2F33B125CEF844003BA34C /* GitHubLanguageColors.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B2F33B025CEF844003BA34C /* GitHubLanguageColors.json */; };
+		0B2F33B625CEF991003BA34C /* GitHubLanguageColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2F33B525CEF991003BA34C /* GitHubLanguageColors.swift */; };
+		0B2F33C225CF0234003BA34C /* UIColor.hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2F33C125CF0234003BA34C /* UIColor.hex.swift */; };
 		BF0A658D244F2A3B00280FA6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A658C244F2A3B00280FA6 /* DetailViewController.swift */; };
 		BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945DE244DC5E80012785A /* AppDelegate.swift */; };
 		BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945E0244DC5E80012785A /* SceneDelegate.swift */; };
@@ -93,8 +95,10 @@
 		0B2F336225CE78F1003BA34C /* RepositoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryCell.xib; sourceTree = "<group>"; };
 		0B2F336725CE796B003BA34C /* CellReusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellReusable.swift; sourceTree = "<group>"; };
 		0B2F337725CE9993003BA34C /* UIImageView+SFSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+SFSymbols.swift"; sourceTree = "<group>"; };
-		0B2F33AC25CEEF93003BA34C /* GitHubLanguageColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubLanguageColors.swift; sourceTree = "<group>"; };
+		0B2F33AC25CEEF93003BA34C /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		0B2F33B025CEF844003BA34C /* GitHubLanguageColors.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GitHubLanguageColors.json; sourceTree = "<group>"; };
+		0B2F33B525CEF991003BA34C /* GitHubLanguageColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubLanguageColors.swift; sourceTree = "<group>"; };
+		0B2F33C125CF0234003BA34C /* UIColor.hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.hex.swift; sourceTree = "<group>"; };
 		BF0A658C244F2A3B00280FA6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSEngineerCodeCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD945DE244DC5E80012785A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +144,7 @@
 		0B2F2F6225C8045E003BA34C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0B2F33AC25CEEF93003BA34C /* Language.swift */,
 				0B2F2F7425C80625003BA34C /* SearchResponse.swift */,
 				0B2F331525CDBE1B003BA34C /* Repository.swift */,
 				0B2F331B25CDC08A003BA34C /* Owner.swift */,
@@ -177,7 +182,6 @@
 				0B2F327425CA9879003BA34C /* ClassName.swift */,
 				0B2F327325CA9879003BA34C /* Injectable.swift */,
 				0B2F336725CE796B003BA34C /* CellReusable.swift */,
-				0B2F33AC25CEEF93003BA34C /* GitHubLanguageColors.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -237,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				0B2F337725CE9993003BA34C /* UIImageView+SFSymbols.swift */,
+				0B2F33C125CF0234003BA34C /* UIColor.hex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -253,6 +258,7 @@
 		0B2F339125CEC0CF003BA34C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				0B2F33B425CEF95C003BA34C /* Generated */,
 				0B2F32FC25CDB30E003BA34C /* Views */,
 				0B2F329125CAF815003BA34C /* API */,
 				0B2F327E25CA988E003BA34C /* Common */,
@@ -271,6 +277,14 @@
 				0B2F33B025CEF844003BA34C /* GitHubLanguageColors.json */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		0B2F33B425CEF95C003BA34C /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				0B2F33B525CEF991003BA34C /* GitHubLanguageColors.swift */,
+			);
+			path = Generated;
 			sourceTree = "<group>";
 		};
 		BFD945D2244DC5E80012785A = {
@@ -458,6 +472,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B2F33B625CEF991003BA34C /* GitHubLanguageColors.swift in Sources */,
 				BFD945E3244DC5E80012785A /* SearchViewController.swift in Sources */,
 				0B2F336325CE78F1003BA34C /* RepositoryCell.swift in Sources */,
 				0B2F336825CE796B003BA34C /* CellReusable.swift in Sources */,
@@ -467,12 +482,13 @@
 				BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */,
 				BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */,
 				0B2F32C425CD5430003BA34C /* SearchViewPresenter.swift in Sources */,
+				0B2F33C225CF0234003BA34C /* UIColor.hex.swift in Sources */,
 				0B2F32D825CD5A47003BA34C /* SearchModel.swift in Sources */,
 				0B2F331C25CDC08B003BA34C /* Owner.swift in Sources */,
 				0B2F2F7525C80625003BA34C /* SearchResponse.swift in Sources */,
 				0B2F327725CA9879003BA34C /* ClassName.swift in Sources */,
 				0B2F337825CE9993003BA34C /* UIImageView+SFSymbols.swift in Sources */,
-				0B2F33AD25CEEF93003BA34C /* GitHubLanguageColors.swift in Sources */,
+				0B2F33AD25CEEF93003BA34C /* Language.swift in Sources */,
 				0B2F327625CA9879003BA34C /* Injectable.swift in Sources */,
 				0B2F327525CA9879003BA34C /* Instantiatable.swift in Sources */,
 			);
@@ -679,7 +695,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S7G9J68NLX;
-				INFOPLIST_FILE = iOSEngineerCodeCheckTests/Resources/Info.plist;
+				INFOPLIST_FILE = iOSEngineerCodeCheck/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -701,7 +717,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S7G9J68NLX;
-				INFOPLIST_FILE = iOSEngineerCodeCheckTests/Resources/Info.plist;
+				INFOPLIST_FILE = iOSEngineerCodeCheck/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
