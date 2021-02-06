@@ -28,7 +28,6 @@
 		0B2F336325CE78F1003BA34C /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2F336125CE78F1003BA34C /* RepositoryCell.swift */; };
 		0B2F336425CE78F1003BA34C /* RepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B2F336225CE78F1003BA34C /* RepositoryCell.xib */; };
 		0B2F336825CE796B003BA34C /* CellReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2F336725CE796B003BA34C /* CellReusable.swift */; };
-		0B2F336E25CE8DF8003BA34C /* String+estimatedHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2F336D25CE8DF7003BA34C /* String+estimatedHeight.swift */; };
 		0B2F337825CE9993003BA34C /* UIImageView+SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2F337725CE9993003BA34C /* UIImageView+SFSymbols.swift */; };
 		BF0A658D244F2A3B00280FA6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A658C244F2A3B00280FA6 /* DetailViewController.swift */; };
 		BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945DE244DC5E80012785A /* AppDelegate.swift */; };
@@ -91,7 +90,6 @@
 		0B2F336125CE78F1003BA34C /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 		0B2F336225CE78F1003BA34C /* RepositoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryCell.xib; sourceTree = "<group>"; };
 		0B2F336725CE796B003BA34C /* CellReusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellReusable.swift; sourceTree = "<group>"; };
-		0B2F336D25CE8DF7003BA34C /* String+estimatedHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+estimatedHeight.swift"; sourceTree = "<group>"; };
 		0B2F337725CE9993003BA34C /* UIImageView+SFSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+SFSymbols.swift"; sourceTree = "<group>"; };
 		BF0A658C244F2A3B00280FA6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSEngineerCodeCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -233,7 +231,6 @@
 		0B2F336C25CE8DE1003BA34C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				0B2F336D25CE8DF7003BA34C /* String+estimatedHeight.swift */,
 				0B2F337725CE9993003BA34C /* UIImageView+SFSymbols.swift */,
 			);
 			path = Extensions;
@@ -456,7 +453,6 @@
 			files = (
 				BFD945E3244DC5E80012785A /* SearchViewController.swift in Sources */,
 				0B2F336325CE78F1003BA34C /* RepositoryCell.swift in Sources */,
-				0B2F336E25CE8DF8003BA34C /* String+estimatedHeight.swift in Sources */,
 				0B2F336825CE796B003BA34C /* CellReusable.swift in Sources */,
 				0B2F329325CAF827003BA34C /* GitHubAPI.swift in Sources */,
 				BF0A658D244F2A3B00280FA6 /* DetailViewController.swift in Sources */,
