@@ -65,5 +65,5 @@ class SearchModel: SearchModelProtocol {
 
 protocol SearchModelDelegate: class {
     func didChange(repositories: [Repository])
-    func didReceive(error: Error)
+    func didReceive(error: SessionTaskError)
 }

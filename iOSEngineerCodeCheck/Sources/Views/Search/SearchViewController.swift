@@ -70,8 +70,12 @@ extension SearchViewController: SearchView {
     }
     
     func showAlert(with errorMessage: String) {
-        //TODO: show alert
-        print(errorMessage)
+        let alert = UIAlertController(title: errorMessage,
+                                              message: errorMessage,
+                                              preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default){ _ in }
+        alert.addAction(okAction)
+        present(alert, animated: false, completion: nil)
     }
 }
 

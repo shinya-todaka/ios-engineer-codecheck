@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import APIKit
 
 protocol SearchPresenter {
     var view: SearchView? { get set }
@@ -54,7 +55,7 @@ extension SearchViewPresenter: SearchModelDelegate {
         }
     }
     
-    func didReceive(error: Error) {
+    func didReceive(error: SessionTaskError) {
         DispatchQueue.main.async {
             //TODO: change error message
             self.view?.showAlert(with: error.localizedDescription)
