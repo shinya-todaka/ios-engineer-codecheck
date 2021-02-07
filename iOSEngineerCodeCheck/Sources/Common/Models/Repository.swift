@@ -9,7 +9,12 @@
 import Foundation
 import UIKit
 
-struct Repository: Decodable {
+struct Repository: Decodable, Equatable {
+    
+    static func ==(lhs: Self, rhs: Self) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
     let id: Int
     let name: String
     let fullName: String
@@ -19,6 +24,8 @@ struct Repository: Decodable {
     let forksCount: Int
     let openIssuesCount: Int
     let description: String?
+    let homepage: String?
+    let htmlUrl: String?
     
     let owner: Owner
     
@@ -32,14 +39,14 @@ struct Repository: Decodable {
         case forksCount = "forks_count"
         case openIssuesCount = "open_issues_count"
         case description
+        case homepage
+        case htmlUrl = "html_url"
         case owner
     }
 }
 
-extension Repository: Equatable {
-    static func ==(lhs: Self, rhs: Self) -> Bool {
-        return lhs.id == rhs.id
-    }
+extension Repository {
+    static let template = Repository(id: 0, name: "swift", fullName: "apple/swift", language: "C++", stargazersCount: 54964, watchersCount: 54964, forksCount: 8836, openIssuesCount: 309, description: "The Swift Programming Language", homepage: "https://opendev.org/openstack/swift", htmlUrl: "https://github.com/apple/swift", owner: .init(avatarUrl: "https://avatars.githubusercontent.com/u/10639145?v=4", login: "apple"))
 }
 
 extension Repository {
