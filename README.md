@@ -35,3 +35,27 @@ Issues を確認した上、本プロジェクトを [**Duplicate** してくだ
 | 中途／経験者 | 必須 | 必須 | 選択 |
 
 課題が完成したら、リポジトリーのアドレスを教えてください。
+
+---
+
+## 追加した機能
+
+- ページネーションの実装。
+- リポジトリをブラウザから開けるようにした。
+
+## UIのブラッシュアップ
+
+| SearchViewController | DetailView |
+| :----------------: | :----------------: |
+| <img src="https://user-images.githubusercontent.com/41521458/107140255-34e4fb80-6964-11eb-8f37-4d6ffdd3726e.png" width="320px"> | <img src="https://user-images.githubusercontent.com/41521458/107139544-42e44d80-695f-11eb-9ce6-126247546b48.png" width="320px">
+
+### 使用したライブラリ
+
+- [APIKit](https://github.com/ishkawa/APIKit)（Carthage)
+- [Nuke](https://github.com/kean/Nuke)（Cathage)
+- [SwiftGen](https://github.com/SwiftGen/SwiftGen)（Mint)
+
+APIkitとNukeは CarthageでSwiftGenはMintで導入しています。
+
+### アーキテクチャ
+MVPで実装しています。
