@@ -18,7 +18,7 @@ struct Repository: Decodable {
     let watchersCount: Int
     let forksCount: Int
     let openIssuesCount: Int
-    let description: String
+    let description: String?
     
     let owner: Owner
     
@@ -36,8 +36,15 @@ struct Repository: Decodable {
     }
 }
 
+extension Repository: Equatable {
+    static func ==(lhs: Self, rhs: Self) -> Bool {
+        return lhs.id == rhs.id
+    }
+}
+
 extension Repository {
     var languageColor: UIColor? {
         return language.flatMap(Language.init(rawValue:))?.color
     }
 }
+

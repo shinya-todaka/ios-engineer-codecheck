@@ -10,20 +10,48 @@ import APIKit
 
 protocol SearchModelProtocol {
     var delegate: SearchModelDelegate? { get set }
+    var repositories: [Repository] { get }
     var sessionTask: SessionTask? { get }
-    func fetchItems(text: String)
+    func fetchAdditionalRepositories()
+    func fetchInitialRepositories(query: String)
     func cancel()
 }
 
 class SearchModel: SearchModelProtocol {
     weak var delegate: SearchModelDelegate?
-    private(set) var sessionTask: SessionTask?
+    internal var sessionTask: SessionTask?
+    private var currentPage: Int = 1
+    private var currentQuery: String = ""
     
-    func fetchItems(text: String) {
-        self.sessionTask = GitHubAPI.call(request: GitHubAPI.SearchRepositories(query: text)) { [weak self] (result) in
+    private(set) var repositories: [Repository] = [] {
+        didSet {
+            if oldValue != repositories {
+                self.delegate?.didChange(repositories: repositories)
+            }
+        }
+    }
+    
+    func fetchAdditionalRepositories() {
+        fetchRepositories(query: self.currentQuery, page: currentPage + 1) { [weak self] (response) in
+            self?.repositories += response.repositories
+        }
+    }
+    
+    func fetchInitialRepositories(query: String) {
+        self.currentQuery = query
+        self.currentPage = 1
+        fetchRepositories(query: query, page: self.currentPage) { [weak self] response in
+            self?.repositories = response.repositories
+        }
+    }
+    
+    private func fetchRepositories(query: String, page: Int, completion: @escaping (SearchResponse) -> Void) {
+        let request = GitHubAPI.SearchRepositories(query: query, page: page)
+        self.sessionTask = GitHubAPI.call(request: request) { [weak self] (result) in
             switch result {
-            case let .success(response):
-                self?.delegate?.didChange(repositories: response.repositories)
+            case let.success(response):
+                self?.currentPage += 1
+                completion(response)
             case let .failure(error):
                 self?.delegate?.didReceive(error: error)
             }
@@ -37,5 +65,5 @@ class SearchModel: SearchModelProtocol {
 
 protocol SearchModelDelegate: class {
     func didChange(repositories: [Repository])
-    func didReceive(error: Error)
+    func didReceive(error: SessionTaskError)
 }

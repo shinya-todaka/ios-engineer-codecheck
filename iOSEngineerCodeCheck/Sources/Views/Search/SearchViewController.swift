@@ -57,6 +57,11 @@ class SearchViewController: UITableViewController, StoryboardInstantiatable, Inj
         let detailVC = DetailViewController.instantiate(with: item)
         navigationController?.pushViewController(detailVC, animated: true)
     }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let maxScrollDistance = max(0, scrollView.contentSize.height - scrollView.bounds.size.height)
+        presenter.setIsReachedBottom(maxScrollDistance <= scrollView.contentOffset.y)
+    }
 }
 
 extension SearchViewController: SearchView {
@@ -65,8 +70,12 @@ extension SearchViewController: SearchView {
     }
     
     func showAlert(with errorMessage: String) {
-        //TODO: show alert
-        print(errorMessage)
+        let alert = UIAlertController(title: errorMessage,
+                                              message: errorMessage,
+                                              preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default){ _ in }
+        alert.addAction(okAction)
+        present(alert, animated: false, completion: nil)
     }
 }
 
