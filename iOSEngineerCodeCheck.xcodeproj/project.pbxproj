@@ -33,6 +33,7 @@
 		0B2F33B125CEF844003BA34C /* GitHubLanguageColors.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B2F33B025CEF844003BA34C /* GitHubLanguageColors.json */; };
 		0B2F33B625CEF991003BA34C /* GitHubLanguageColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2F33B525CEF991003BA34C /* GitHubLanguageColors.swift */; };
 		0B2F33C225CF0234003BA34C /* UIColor.hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2F33C125CF0234003BA34C /* UIColor.hex.swift */; };
+		0BB3A8FD25CF9F1B00C3A7FD /* RemoteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB3A8FC25CF9F1B00C3A7FD /* RemoteImageView.swift */; };
 		BF0A658D244F2A3B00280FA6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A658C244F2A3B00280FA6 /* DetailViewController.swift */; };
 		BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945DE244DC5E80012785A /* AppDelegate.swift */; };
 		BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945E0244DC5E80012785A /* SceneDelegate.swift */; };
@@ -99,6 +100,7 @@
 		0B2F33B025CEF844003BA34C /* GitHubLanguageColors.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GitHubLanguageColors.json; sourceTree = "<group>"; };
 		0B2F33B525CEF991003BA34C /* GitHubLanguageColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubLanguageColors.swift; sourceTree = "<group>"; };
 		0B2F33C125CF0234003BA34C /* UIColor.hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.hex.swift; sourceTree = "<group>"; };
+		0BB3A8FC25CF9F1B00C3A7FD /* RemoteImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageView.swift; sourceTree = "<group>"; };
 		BF0A658C244F2A3B00280FA6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSEngineerCodeCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD945DE244DC5E80012785A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 		0B2F32FC25CDB30E003BA34C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0BB3A8F525CF9EDE00C3A7FD /* Common */,
 				0B2F323F25CA95D7003BA34C /* Detail */,
 				0B2F323925CA9553003BA34C /* Search */,
 			);
@@ -285,6 +288,14 @@
 				0B2F33B525CEF991003BA34C /* GitHubLanguageColors.swift */,
 			);
 			path = Generated;
+			sourceTree = "<group>";
+		};
+		0BB3A8F525CF9EDE00C3A7FD /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0BB3A8FC25CF9F1B00C3A7FD /* RemoteImageView.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		BFD945D2244DC5E80012785A = {
@@ -490,6 +501,7 @@
 				0B2F337825CE9993003BA34C /* UIImageView+SFSymbols.swift in Sources */,
 				0B2F33AD25CEEF93003BA34C /* Language.swift in Sources */,
 				0B2F327625CA9879003BA34C /* Injectable.swift in Sources */,
+				0BB3A8FD25CF9F1B00C3A7FD /* RemoteImageView.swift in Sources */,
 				0B2F327525CA9879003BA34C /* Instantiatable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
