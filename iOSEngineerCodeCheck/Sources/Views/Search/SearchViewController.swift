@@ -19,7 +19,7 @@ class SearchViewController: UITableViewController, StoryboardInstantiatable, Inj
 
     @IBOutlet weak var searchBar: UISearchBar! {
         didSet {
-            searchBar.placeholder = "GitHubのリポジトリを検索できるよー"
+            searchBar.placeholder = "リポジトリを検索"
             searchBar.delegate = self
         }
     }
@@ -36,10 +36,25 @@ class SearchViewController: UITableViewController, StoryboardInstantiatable, Inj
         setupTableView()
     }
     
+    /// - Note: To avoid scroll to top when pop viewController
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        tableView.isScrollEnabled = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+    
+        tableView.isScrollEnabled = false
+    }
+    
+   
+    
     private func setupTableView() {
         tableView.register(cellType: RepositoryCell.self)
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 98
+        tableView.estimatedRowHeight = 134
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
