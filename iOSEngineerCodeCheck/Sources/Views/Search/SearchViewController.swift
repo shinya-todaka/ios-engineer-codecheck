@@ -49,8 +49,6 @@ class SearchViewController: UITableViewController, StoryboardInstantiatable, Inj
         tableView.isScrollEnabled = false
     }
     
-   
-    
     private func setupTableView() {
         tableView.register(cellType: RepositoryCell.self)
         tableView.rowHeight = UITableView.automaticDimension
