@@ -22,11 +22,8 @@ class RemoteImage: ObservableObject {
     private func loadImage(url: URL) {
         ImagePipeline.shared.loadImage(with: url) { [weak self] result in
             guard let self = self else { return }
-            switch result {
-            case .success(let response):
+            if case let .success(response) = result {
                 self.image = response.image
-            case .failure(let error):
-                print(error.localizedDescription)
             }
         }
     }
