@@ -34,9 +34,9 @@ class SearchModelStub: SearchModelProtocol {
     var delegate: SearchModelDelegate?
     var sessionTask: SessionTask?
     
-    private var fetchInitialRepositoriesResponse: [String: Result<[Repository], Error>] = [:]
+    private var fetchInitialRepositoriesResponse: [String: Result<[Repository], SessionTaskError>] = [:]
     
-    func addFetchInitialRepositoriesResponse(query: String, result: Result<[Repository], Error>) {
+    func addFetchInitialRepositoriesResponse(query: String, result: Result<[Repository], SessionTaskError>) {
         self.fetchInitialRepositoriesResponse[query] = result
     }
     
@@ -57,10 +57,8 @@ class SearchModelStub: SearchModelProtocol {
     func fetchAdditionalRepositories() {}
 }
 
-extension SearchModelStub {
-    enum APIErrpr: Error {
-        case unknownError
-    }
+enum APIErrpr: Error {
+    case unknownError
 }
 
 class SearchViewPresenterTest: XCTestCase {
@@ -74,7 +72,7 @@ class SearchViewPresenterTest: XCTestCase {
                 presenter.view = spy
                 let textToSearch = "swift"
                 
-                let response: Result<[Repository], Error> = .success([.init(id: 0, name: "swift", fullName: "swift/apple", language: "c", stargazersCount: 12345, watchersCount: 12345, forksCount: 12345, openIssuesCount: 12345, description: "oss", owner: .init(avatarUrl: "https:/hogehoge", login: "apple"))])
+                let response: Result<[Repository], SessionTaskError> = .success([Repository.template])
                 
                 stub.addFetchInitialRepositoriesResponse(query: textToSearch, result: response)
                 let exp = XCTestExpectation(description: "searchButtonTappedが呼ばれた後に実行されるupdateTableViewを待つ")
@@ -94,7 +92,7 @@ class SearchViewPresenterTest: XCTestCase {
                 let presenter = SearchViewPresenter(model: stub)
                 presenter.view = spy
                 let textToSearch = "swift"
-                let response: Result<[Repository], Error> = .failure(SearchModelStub.APIErrpr.unknownError)
+                let response: Result<[Repository], SessionTaskError> = .failure(SessionTaskError.responseError(APIErrpr.unknownError))
                 
                 stub.addFetchInitialRepositoriesResponse(query: textToSearch, result: response)
                 let exp = XCTestExpectation(description: "searchButtonTappedが呼ばれた後に実行されるshowAlertを待つ")

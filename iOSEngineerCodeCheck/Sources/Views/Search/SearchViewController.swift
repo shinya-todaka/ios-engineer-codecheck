@@ -8,6 +8,7 @@
 
 import UIKit
 import APIKit
+import SwiftUI
 
 protocol SearchView: class {
     func updateTableView()
@@ -53,8 +54,8 @@ class SearchViewController: UITableViewController, StoryboardInstantiatable, Inj
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let item = presenter.repositories[indexPath.item]
-        let detailVC = DetailViewController.instantiate(with: item)
+        let repository = presenter.repositories[indexPath.item]
+        let detailVC = UIHostingController(rootView: DetailView(repository: repository))
         navigationController?.pushViewController(detailVC, animated: true)
     }
     
